@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+class Human
+{
+public:
+    string name;
+    string surname;
+    string midname;
+    int age;
+    Human(){}
+
+    virtual void print()
+    {
+        cout << surname << endl;
+        cout << name << endl;
+        cout << midname << endl;
+        cout << age << endl;
+    }
+};
+
+class Student : public Human
+{
+public:
+    bool on_lesson;
+};
+
+class Boss : public Human
+{
+public:
+    int number_of_workers;
+};
+
+int main()
+{
+    Student ZAHAR;
+    ZAHAR.name = "Mihail";
+    ZAHAR.surname = "Zaharov";
+    ZAHAR.midname = "Aleksandrovich";
+    ZAHAR.age = 18;
+    ZAHAR.on_lesson = 0;
+    ZAHAR.print();
+    cout << ZAHAR.on_lesson << endl;
+    Boss ZUEV;
+    ZUEV.name = "Andrey";
+    ZUEV.surname = "Zuev";
+    ZUEV.midname = "Sergeevich";
+    ZUEV.age = 33;
+    ZUEV.number_of_workers = 99;
+    ZUEV.print();
+    cout << ZUEV.number_of_workers << endl;
+    return 0;
+}
